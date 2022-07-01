@@ -36,7 +36,7 @@ func loadApp(mode string)  {
 		panic(err)
 	}
 
-	if NodeType == "client" {
+	if NodeType == "client" && NodeName == "127.0.0.1" {
 		App.GinPort++
 	}
 }
