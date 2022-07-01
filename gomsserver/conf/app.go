@@ -18,6 +18,9 @@ type app struct {
 	InitPassword    string //后台初始密码
 
 	Ip2RegionDbFile string //Ip2Region 数据文件
+
+	ServerApi	string //server api 地址(client 需要配置)
+	ClientPort	string //client 端口(server 需要配置)
 }
 
 
@@ -31,5 +34,9 @@ func loadApp(mode string)  {
 	err := ini.MapTo(App, "./conf/app." + mode + ".ini")
 	if err != nil {
 		panic(err)
+	}
+
+	if NodeType == "client" {
+		App.GinPort++
 	}
 }

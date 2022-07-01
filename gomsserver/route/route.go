@@ -29,8 +29,10 @@ func initRoute(engine *gin.Engine) {
 
 	v1 := engine.Group("v1")
 
-	initAuth(v1)
+	if conf.NodeType == "server" {
+		initAuth(v1)
 
-	initAdmUser(v1)
-	initLog(v1)
+		initAdmUser(v1)
+		initLog(v1)
+	}
 }
