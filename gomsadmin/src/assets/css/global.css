@@ -1,0 +1,6 @@
+/* Element Plus 容器高度 100% */
+html, body, body > #app, #app > .el-container {
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+}
