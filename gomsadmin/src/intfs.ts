@@ -24,3 +24,17 @@ export interface IUserLoginLog {
 export interface IUserSearch {
     account: string
 }
+
+
+export interface IHost {
+    id: number
+    created_at: number
+
+    name: string
+    
+    ssh_port: number
+    ssh_username: string
+    ssh_password: string
+    
+    remark: string
+}

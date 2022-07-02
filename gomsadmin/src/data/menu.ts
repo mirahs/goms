@@ -48,4 +48,15 @@ export const menus: IMenu[] = [
             },
         ],
     },
+    {
+        name: 'ms',
+        desc: 'MS',
+        children: [
+            {
+                name: 'Host',
+                desc: '主机',
+                key: [1],
+            },
+        ],
+    },
 ]
