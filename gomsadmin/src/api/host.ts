@@ -13,7 +13,6 @@ export const add = (data: any): Promise<IApiResponse> => {
 
 // 编辑主机
 export const edit = (id: number, data: any): Promise<IApiResponse> => {
-    console.log('data:', data)
     return request.put(`hosts/${id}`, data)
 }
 
