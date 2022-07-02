@@ -5,6 +5,7 @@ import (
 	"gomsserver/util"
 )
 
+
 type AdminUser struct {
 	Id uint32
 	Account string

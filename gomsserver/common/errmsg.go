@@ -21,4 +21,8 @@ var (
 	ErrAULocked 			= gin.H{"code": 205, "msg": "账号已封禁"}
 	ErrAUDenied 			= gin.H{"code": 206, "msg": "权限不足"}
 	ErrAUPasswordFailedMax 	= gin.H{"code": 207, "msg": "密码错误次数过多"}
+
+	// 300 - 319 host
+	ErrHostExist 			= gin.H{"code": 300, "msg": "主机已存在"}
+	ErrHostIdNotExist      	= gin.H{"code": 301, "msg": "主机不存在"}
 )

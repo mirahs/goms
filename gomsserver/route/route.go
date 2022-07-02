@@ -34,5 +34,7 @@ func initRoute(engine *gin.Engine) {
 
 		initAdmUser(v1)
 		initLog(v1)
+
+		initHost(v1)
 	}
 }

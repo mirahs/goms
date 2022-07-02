@@ -80,6 +80,8 @@ func Init() {
 	err = Db.AutoMigrate(
 		&AdmUser{},
 		&LogAdmUserLogin{},
+
+		&Host{},
 	)
 	if err != nil {
 		panic("model.Init AutoMigrate err:" + err.Error())

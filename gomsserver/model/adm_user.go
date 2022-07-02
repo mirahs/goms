@@ -71,7 +71,6 @@ func AUAdd(data map[string]interface{}) error {
 	return Db.Create(&admUser).Error
 }
 
-
 func AUEdit(id uint32, data map[string]interface{}) error {
 	return Db.Model(&AdmUser{Model: Model{ID: id}}).Updates(data).Error
 }

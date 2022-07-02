@@ -44,5 +44,8 @@ func init() {
 
 		{Path: "/v1/log/login/adm_user", Types: []uint8{constant.AdminUserTypeAdmin}},
 		{Path: "/v1/log/login/adm_user/:id", Types: []uint8{constant.AdminUserTypeAdmin}},
+
+		{Path: "/v1/hosts", Types: []uint8{constant.AdminUserTypeAdmin}},
+		{Path: "/v1/hosts/:id", Types: []uint8{constant.AdminUserTypeAdmin}},
 	}
 }
