@@ -1,6 +1,7 @@
 package dto
 
 import (
+	"gomsserver/dao"
 	"gomsserver/model"
 )
 
@@ -16,6 +17,8 @@ type Host struct {
 	SshPassword string `json:"ssh_password"`
 
 	Remark string `json:"remark"`
+	
+	Online bool `json:"online"`
 }
 
 
@@ -31,6 +34,8 @@ func ToHost(user *model.Host) *Host {
 		SshPassword: user.SshPassword,
 
 		Remark: user.Remark,
+
+		Online: dao.HostOnlineGet(user.Name),
 	}
 }
 

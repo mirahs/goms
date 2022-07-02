@@ -36,5 +36,7 @@ func initRoute(engine *gin.Engine) {
 		initLog(v1)
 
 		initHost(v1)
+
+		initCSServer(v1)
 	}
 }

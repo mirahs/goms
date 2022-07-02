@@ -4,6 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"gomsserver/conf"
+	"gomsserver/crontab"
 	"gomsserver/model"
 	"gomsserver/route"
 	"gomsserver/util"
@@ -24,7 +25,6 @@ func main() {
 
 	conf.NodeType = *nodeType
 	conf.NodeName = *nodeName
-
 	conf.Load(*mode)
 
 	if *nodeType == "server" {
@@ -33,6 +33,8 @@ func main() {
 		util.IpInit(conf.App.Ip2RegionDbFile)
 		defer util.IpClose()
 	}
+
+	crontab.Init()
 
 	engine := route.Init()
 
