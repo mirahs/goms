@@ -1,7 +1,6 @@
 package api
 
 import (
-	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/unknwon/com"
 	"gomsserver/common"
@@ -74,7 +73,6 @@ func HostEdit(ctx *gin.Context) {
 		common.RespFailed(ctx, http.StatusBadRequest, common.ErrParamFailed)
 		return
 	}
-	fmt.Printf("voEdit:%v\n", voEdit)
 
 	vmUser := vm.Host{Id: voEdit.ID, Name: voEdit.Name, SshPort: voEdit.SshPort, SshUsername: voEdit.SshUsername, SshPassword: voEdit.SshPassword, Remark: voEdit.Remark}
 
