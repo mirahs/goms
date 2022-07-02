@@ -37,4 +37,6 @@ export interface IHost {
     ssh_password: string
     
     remark: string
+
+    online: boolean
 }

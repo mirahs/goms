@@ -1,11 +1,22 @@
 <template>
   <div class="container">
     <el-table :data="datas" border stripe style="width: 100%">
-    <el-table-column prop="id" label="ID" fixed> </el-table-column>
+      <el-table-column prop="id" label="ID" fixed> </el-table-column>
 
       <el-table-column prop="name" label="主机名" fixed> </el-table-column>
       <el-table-column prop="created_at" label="添加时间" :formatter="formatDate"></el-table-column>
       <el-table-column prop="remark" label="备注"> </el-table-column>
+
+      <el-table-column prop="online" label="状态">
+        <template #default="scope">
+          <el-icon v-if="scope.row.online" color="green">
+            <IconCheck />
+          </el-icon>
+          <el-icon v-else color="red">
+            <IconClose />
+          </el-icon>
+        </template>
+      </el-table-column>
 
       <el-table-column fixed="right" align="center" label="操作" width="180">
         <template #header>
@@ -35,7 +46,7 @@ import { ref } from 'vue'
 import moment from 'moment'
 
 import { Action, ElMessage, ElMessageBox } from 'element-plus'
-import { Plus as IconPlus, Edit as IconEdit, Delete as IconDelete } from '@element-plus/icons-vue'
+import { Check as IconCheck, Close as IconClose, Plus as IconPlus, Edit as IconEdit, Delete as IconDelete } from '@element-plus/icons-vue'
 
 import HostEdit from './components/HostEdit.vue'
 
